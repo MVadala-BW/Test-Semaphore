@@ -1,5 +1,6 @@
 ---
 - name: Simple playbook to print hostname
+  host: all
   tasks:
     - name: Get hostname
       ansible.builtin.command:
