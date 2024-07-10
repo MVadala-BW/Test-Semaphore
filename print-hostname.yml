@@ -3,9 +3,10 @@
   hosts: localhost
   tasks:
     - name: Get hostname
-      community.general.hostname:
+      ansible.builtin.command:
+        cmd: hostname
       register: hostname_result
 
     - name: Print hostname
       debug:
-        msg: "The hostname is: {{ hostname_result.name }}"
+        msg: "The hostname is: {{ hostname_result.stdout }}"
