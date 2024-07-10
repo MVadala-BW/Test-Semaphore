@@ -1,16 +1,11 @@
 ---
 - name: Simple playbook to print hostname
   hosts: localhost
-  gather_facts: no
   tasks:
     - name: Get hostname
       ansible.builtin.command:
         cmd: hostname
       register: hostname_result
-
-    - name: Print hostname_result
-      debug:
-        var: hostname_result
 
     - name: Print hostname
       debug:
