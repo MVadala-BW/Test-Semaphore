@@ -1,0 +1,11 @@
+---
+- name: Simple playbook to print hostname
+  hosts: localhost
+  tasks:
+    - name: Get hostname
+      community.general.hostname:
+      register: hostname_result
+
+    - name: Print hostname
+      debug:
+        msg: "The hostname is: {{ hostname_result.name }}"
